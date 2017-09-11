@@ -8,6 +8,7 @@
  using namespace std;
  
  int main() {
+//Variables for entered words
     string adj_one;
     string adj_two;
     string noun_one;
@@ -16,6 +17,7 @@
     string noun_four;
     string noun_five;
     
+//User Input
     cout << "Enter 2 adjectives and 5 nouns in order." << endl; 
     cout << "No spaces. Tap ENTER to enter each word: " << endl;
     cin >> adj_one;
@@ -26,6 +28,7 @@
     cin >> noun_four;
     cin >> noun_five;
     
+//Program output/the madlib
     cout << "A vacation is when you take a trip to some *" << adj_one << " place with your *" << endl;
     cout << adj_two << " family. Usually you go to some place that is near a/an *" << noun_one << endl;
     cout << "or up on a/an *" << noun_two << ". A good vacation place is one where you can ride *" << noun_three << endl;
