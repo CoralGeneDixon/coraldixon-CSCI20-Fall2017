@@ -10,6 +10,7 @@ also outputs the difference between the 2 formulas.
 #include <cmath>
 using namespace std;
 
+//Main Struct
 struct Windchills{
   double temp;
   double start_speed;
@@ -20,7 +21,8 @@ struct Windchills{
 };
 
 int main(){
-    Windchills formula;
+    
+    Windchills formula;//Main Object
     
     cout << "Enter Temperature: ";
     cin >> formula.temp;
@@ -29,12 +31,12 @@ int main(){
     cin >> formula.start_speed;
     
     formula.windchill_old = 0.081 * (3.71 * sqrt(formula.start_speed) + 
-    5.81 - 0.25 * formula.start_speed) * (formula.temp - 91.4) + 91.4;
+    5.81 - 0.25 * formula.start_speed) * (formula.temp - 91.4) + 91.4; //Calculates windchill using old formula
     
     formula.windchill_new = 35.74 + 0.6215 * formula.temp - 35.75 * 
-    pow(formula.start_speed, 0.16) + 0.4275 * formula.temp * pow(formula.start_speed, 0.16);
+    pow(formula.start_speed, 0.16) + 0.4275 * formula.temp * pow(formula.start_speed, 0.16); //Calculates windchill using new formula
 
-    formula.windchill_dif = formula.windchill_new - formula.windchill_old;
+    formula.windchill_dif = formula.windchill_new - formula.windchill_old; //Calculates difference between formulas calculations
     
     cout << "Windspeed: " << formula.start_speed << endl;
     cout << "Old Formula Calc: " << formula.windchill_old << endl;
