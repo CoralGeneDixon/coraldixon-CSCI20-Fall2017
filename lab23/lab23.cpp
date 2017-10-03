@@ -13,14 +13,10 @@ The second function prints 2 user inputed numbers and then swaps them
 using namespace std;
 
 void RandomNumber() { //Function that generates a random # between 2 numbers inputed by the user
-    int user_input;
-    int ran_num;
-    int user_num1;
-    int user_num2;
-    
-    cout << "Enter 2 whole numbers, the first being smaller than the second: ";
-    cin >> user_num2 >> user_num1; //user input
-    cout << endl;
+    int user_input = 0;
+    int ran_num = 0;
+    int user_num1 = 0;
+    int user_num2 = 0;
     
     swap(user_num1, user_num2); //swap functions switches the users numbers
     user_input = (user_num2 - user_num1) + 1; //calcluates the random number range
@@ -28,32 +24,39 @@ void RandomNumber() { //Function that generates a random # between 2 numbers inp
     srand(time(0));
     ran_num = (rand() % user_input) + user_num1; //calculates a random number
     
-    cout << ran_num << endl; //generates random #
-    
     return;
 }
 
 void NumSwitch() { //Function that switches 2 numbers inputed by the user
-    int user_num1;
-    int user_num2;
+    int user_num3 = 0;
+    int user_num4 = 0;
+    int user_num5 = 0;
     
-    cout << "Input 2 random integers: ";
-    cin >> user_num1 >> user_num2; //user input
-    cout << endl;
-    cout << user_num1 << "|" << user_num2 << endl; //displays users inputed numbers
-    
-    swap(user_num1, user_num2); //swaps the users 2 inputed numbers
-    cout << user_num1 << "|" << user_num2 << endl; //displays the numbers after switched
+    user_num3 = user_num4;
+    user_num4 = user_num5;
+    user_num5 = user_num3;
+    //swaps the users 2 inputed numbers
+    cout << user_num3 << "|" << user_num4 << endl; //displays the numbers after switched
     
     return;
     
 }
 
 int main() {
+    
+    cout << "Enter 2 whole numbers, the first being smaller than the second: ";
+    cin >> user_num2 >> user_num1; //user input
+    cout << endl;
+    
     RandomNumber(); //function call for the RandomNumber
+    cout << ran_num << endl; //generates random #
     
     cout << "___________________" << endl; //spacing
     cout << endl;
+    cout << "Input 2 random integers: ";
+    cin >> user_num3 >> user_num4; //user input
+    cout << endl;
+    cout << user_num3 << "|" << user_num4 << endl; //displays users inputed numbers
     
     NumSwitch(); //function call for the switched numbers
     
