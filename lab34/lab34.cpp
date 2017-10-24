@@ -44,5 +44,5 @@ Enter grades: 97
 91
 -1
 Average was 91
-Minimum was 92
+Minimum was 86
  */
