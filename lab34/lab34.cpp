@@ -16,13 +16,14 @@ int grade=0;
 
 cout << "Enter grades: ";
 cin >> grade;
+minimum = grade;
 
 while (grade != -1) {
         total = total + grade;
         count = count + 1;
         cin >> grade;
 
-    if (grade > minimum) {                        
+    if ((grade < minimum) && (grade != -1)) {                        
         minimum = grade;                
     }
 }
