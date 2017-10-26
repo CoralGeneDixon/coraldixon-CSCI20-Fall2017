@@ -21,11 +21,12 @@ minimum = grade;
 while (grade != -1) {
         total = total + grade;
         count = count + 1;
-        cin >> grade;
-
-    if ((grade < minimum) && (grade != -1)) {                        
+    if ((grade < minimum)) {                        
         minimum = grade;                
-    }
+    }        
+    cin >> grade;
+
+
 }
  
  // Output results         
