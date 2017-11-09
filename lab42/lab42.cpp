@@ -42,16 +42,7 @@ int main() {
     stock[9] = 4;
     
     
-    price[0] = 5.99;
-    price[1] = 5.99;
-    price[2] = 12.50;
-    price[3] = 10.75;
-    price[4] = 7.00;
-    price[5] = 5.00;
-    price[6] = 3.75;
-    price[7] = 3.75;
-    price[8] = 2.50;
-    price[9] = 7.75;
+    
     
     //For loop that increments the cart # by 1 up to 10 and stores each array spot as 0
     for (int i = 0; i < 10; i++) {

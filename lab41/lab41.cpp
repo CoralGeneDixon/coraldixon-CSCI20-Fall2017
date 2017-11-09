@@ -3,218 +3,144 @@
 about an integer array based on the functions called in the main. Shows the arrays
 min and max. Odd and even numbers.*/
 
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-class ArrayTools {
-    private:
-    //Class Variables
-    int array[];
-    
+class ArrayTools { //creates a class of various array tools
     public:
-
-//Default Constructor for array and size
-ArrayTools() {
-
-    array[0];
-}
-
-//Overload Constructor based on user input
-ArrayTools(int array_one[], int size) {
+        ArrayTools(int myArray[], int size); //overload constructor
+        void Print() const; //prints out the array of size
+        int Find_min(int _myArray[], int _size) const; //prototype for find min function
+        //int Find_max(int _myArray[], int _size) const;
+        int Find_sum(); //prototype for the sum of the array numbers
+        int Nums_even_and_odd(); //prototype for odd/even print out function
+        int Search (int find); //prototype for the search function
     
-    int size_ = size;
-    
-    for (int i = 0; i <= size_; i++) {
-        
-        array[i] = array_one[i];
-        
-    }
-}
-
-
-void SetArray(int array_one[], int size) {
-    
-    int size_ = size;
-    
-    for (int i = 0; i <= size_; i++) {
-        
-        array[i] = array_one[i];
-        
-    }
-}
-
-int GetArray() {
-    return array_one[i];
-}
-
-//Function that returns the minimum value within the ranges given
-int Find_min(int min, int max) {
-    
-    int i = 0;
-    int finding_min = array[min];
-    
-    for (int i = min; min <= max; min++) {
-        
-        if(array[min] <= finding_min) {
-            
-            finding_min = array[min];
-        }
-    }
-    
-    return finding_min;
-}
-
-
-//Function that returns the maximum values within the ranges given
-int Find_max(int min,int max) {
-    
-    int finding_max = array[min];
-    
-    for (int i = min; min <= max; min++) {
-        
-        if(array[min] > finding_max) {
-            
-            finding_max = array[min];
-        }
-    }
-    
-    return finding_max;
-}
-
-//Function that returns the sum of all values in the array
-int Find_sum() {
-    
-    int sum = 0;
-    
-    for (int i = 0; i < size_; i++) {
-        
-        sum += array[i];
-    }
-    
-    return sum;
-}
-
-//Function that returns the amount of odd numbers stored in your array
-int Num_odd() {
-    
-    int odd_ = 0;
-    
-    for (int i = 0; i < size_; i++) {
-        
-        if((array[i] % 2) == 1) {
-            
-            odd_++;
-        }
-    }
-    
-    return odd_;
-}
-
-
-//Function that returns the amount of even numbers stored in your array
-int Num_even() {
-    
-    int even_ = 0;
-    
-    for (int i = 0; i < size_; i++) {
-        
-        if((array[i] % 2) == 0) {
-            
-            even_++;
-        }
-    }
-    
-    return even_;
-}
-        
-//Function that searches the array for a specified value and returns its location     
-int Search(int find_number) {
-    
-    int i;
-    
-    for (i = 0; i < size_; i++) {
-        
-        if(array[i] == find_number) {
-            
-            return i;
-        }
-        
-        else {
-            
-            return -1;
-        }
-    }
-}
-
-//Function that checks to see if the array is sorted in ascending order
-string Is_sorted() {
-    
-    string sorted = "";
-    int max_val = array[0];
-    int sort = 0;
-    int i = 0;
-    
-    for (i = 0; i < size_; i++) {
-        
-        if(array[i] >= max_val) {
-            
-            sort++;
-            
-        }
-        
-    }
-    
-    if (sort >= 9) {
-        
-        sorted = "True";
-    }
-    
-    else {
-        
-        sorted = "False";
-    }
-
-    return sorted;
-    
-}
-
-//Print Function that outputs all values stored in the array
-void Print() {
-    
-    cout << GetArray(); << endl;
-        
-    return;
-}
+    private:
+        int _size;
+        int _myArray[];
 
 };
 
+//overloaded constructor
+ArrayTools::ArrayTools(int myArray[], int size) {
+    for (int i = 0; i < size; i++) {
+        _myArray[i] = myArray[i];
+    }
+    _size = size;
+    return;
+}
 
-int main() {
+//Finds a specific number in the array
+int ArrayTools::Search(int find){
+    // SEARCH FOR A VALUE WITHIN AN ARRAY
+    bool flag = false;
+    for (int i = 0; i < _size; ++i) {
+        if (_myArray[i] == find) {
+            flag = true;
+            return i; 
+        }
+    }
+    return -1;
+}
+//Finds the sum of the array numbers
+int ArrayTools::Find_sum() {
+    //finds the sum of the array
+    int sum = 0;
+    for(int i = 0; i < _size; i++) {
+        sum = sum + _myArray[i];
+    }    
+    return sum;
+}
+//Finds the min num of the array
+int ArrayTools::Find_min(int myArray[], int size) const {
     
-    const int SIZE = 10;
-    int myArray[SIZE];
+    int min = _myArray[0];
     
-    for (int i = 0; i < SIZE; i++) {
-        
+    //For loop that finds minimum and maximum number
+    for(int i=0; i<_size; i++) {
+      if(min > _myArray[i]) {
+         min = _myArray[i];
+        }
+    }
+    return min;
+}
+
+//Function that lists all the odds and evens
+int ArrayTools::Nums_even_and_odd() {
+    // FINDING THE EVENS
+    cout <<"The Even Numbers Are: ";
+    
+    for (int i = 0; i<_size; i++) {
+        if (_myArray[i] % 2 == 0) {
+            cout << "  " << _myArray[i];
+        }
+    }
+    cout << endl;
+    //FINDING THE ODDS
+    cout << "The Odd Numbers Are: ";
+    for (int i = 0; i < _size; i++) {
+        if (_myArray[i] % 2 != 0) {
+            cout << "  " << _myArray[i];
+        }
+    }
+}
+
+//Prints the numbers entered by user in order
+void ArrayTools::Print() const { //print function
+    cout << endl << "NUMBERS ENTERED: " << endl;
+
+    for (int i = 0; i < _size; ++i) {
+        cout << _myArray[i] << endl;
+    }
+    cout << "******************************" << endl;
+    return;
+}
+
+int main () {
+    const int size = 10;
+    int myArray[size];
+
+    //user input for the arrays
+    for (int i = 0; i<size; i++) {
         cin >> myArray[i];
     }
     
-    ArrayTools a(myArray, SIZE);
+    ArrayTools a(myArray, size);
     
     a.Print();
+    cout << "Min: " << a.Find_min(0, 4) << endl;
+    cout << "Sum = " << a.Find_sum() << endl; 
+    cout<<"Search 10"<<a.Search(10)<<endl;
     
-    cout << "Min: " << a.Find_min(0,4) << endl;
-    cout << "Max: " << a.Find_max(5,10) << endl;
-    cout << "Sum = " << a.Find_sum() << endl;
-    cout << "Search 10: " << a.Search(10) << endl;
-    cout << "Sorted? " << a.Is_sorted() << endl;
+    a.Nums_even_and_odd();
     
     return 0;
 }
 
 
+
 /* 
 
-Was unable to successfully run the program
+1 2 3 4 5 6 7 8 9 10
+
+NUMBERS ENTERED: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+******************************
+Min: 1
+Sum = 55
+Search 109
+The Even Numbers Are:   2  4  6  8  10
+The Odd Numbers Are:   1  3  5  7  9
 
 */
