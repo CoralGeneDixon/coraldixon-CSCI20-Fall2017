@@ -27,26 +27,20 @@ int main () {
     bool same = false; //bool for compare
 
     //FINDS IF USER STRING IS OVER THE ARRAY AMOUNT
-    first_num = strlen(first_str);
-    last_num = strlen(last_str);
+    //first_num = strlen(first_str);
+    //last_num = strlen(last_str);
 
     // Prompt user to enter first name
     cout << "Enter your first name (up to 10 characters): ";
-    cin.getline(first_str, first_name);
+    cin >> first_str;
     
     // Prompt user to enter last name
     cout << "Enter your last name (up to 20 characters): ";
-    cin.getline(last_str, last_name);
+    cin >> last_str;
     
-    
-    if (first_num > first_name) {//if the users first name is larger than the cstring allows, user must re-enter first name
-        cout << "Please enter a shorter first name: ";
-        cin.getline(first_str, first_name);
-    }
-    
-    if (last_num > last_name){ //If the users last name has more chars then allowed, user must re-enter
-        cout << "Please enter a shorter last name: ";
-        cin.getline(last_str, last_name);
+
+    if ((strlen(first_str) > first_name) || (strlen(last_str) > last_name)) {//if the users names are larger than the cstring allows, user gets a warning
+        cout << "WARNING: Names are too long." << endl;
     }
     
     //COMPARES IF THE STRINGS ARE THE SAME
@@ -55,17 +49,15 @@ int main () {
         cout << endl;
         
         cout << "Please enter a different first name: ";
-        cin.getline(first_str, first_name);
+        cin >> first_str;
         cout << endl;
         
         cout << "Please enter a different last name: ";
-        cin.getline(last_str, last_name);
+        cin >> last_str;
         cout << endl;
     }
     //END STRING COMPARISON
         
-    if((same == false) && (first_num <= first_name) && (last_num <= last_name)) {
-    
     //PRINTS OUT THREE USERNAME OPTIONS
     cout << "Here's the list of available usernames: " << endl;
    
@@ -91,8 +83,6 @@ int main () {
     }
     cout << endl;
     //END PRINT OUT OF USERNAMES
-        
-    }
     
     return 0;
 }
