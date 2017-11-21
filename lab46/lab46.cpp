@@ -1,6 +1,9 @@
-//Created By: Alex Moxon
-//Created On: 11/16/2017
-/*insert definition here */
+//This program was created by Coral Dixon on November 20 2017
+/*
+The program reads 3 student's grades, units, and names from a filestream, and outputs
+the information in an HTML format. 
+*/
+
 
 #include<iostream>
 #include<fstream>
