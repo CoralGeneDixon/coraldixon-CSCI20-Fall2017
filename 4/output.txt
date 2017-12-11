@@ -1,0 +1,10 @@
+Your personality type is: I?TJ
+
+E = Extrovert
+I = Introvert
+S = Sensation
+N = Intuition
+T = Thinking
+F = Feeling
+J = Judging
+P = Perceiving

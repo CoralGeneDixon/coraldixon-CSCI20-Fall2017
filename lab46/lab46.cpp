@@ -55,7 +55,7 @@ int main() {
     { //If the file input.txt DOES open...
         
         cout << "input.txt has opened" << endl; //...print verification
-    }
+    
         
         
     //Student 1 Input
