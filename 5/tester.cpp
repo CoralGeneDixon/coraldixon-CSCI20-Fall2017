@@ -76,7 +76,7 @@ int main()
     string eye_color = " ";
     
     //Opening input.txt file
-    inFS.open("input.txt");
+    inFS.open("testerinput.txt");
     //Opening output.txt file
     outFS.open("output.txt"); //Opens the filestream
     

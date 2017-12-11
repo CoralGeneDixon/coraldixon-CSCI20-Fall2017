@@ -1,0 +1,67 @@
+What is your name?
+What is your characters name?
+
+What gender is your character?
+A. Male
+B. Female
+C. None
+
+What is your characters age?
+What is your characters hair color?
+What is your characters eye color?
+
+What race of character do you want to be?
+A. Human
+B. Elf
+C. Gnome
+D. Orc
+E. Dragon Born
+F. Dwarf
+G. Halfling
+
+What is your characters class type?
+A. Barbarian
+B. Bard
+C. Druid
+D. Monk
+E. Paladin
+F. Ranger
+G. Sorcerer
+H. Warlock
+
+What is your characters alignment?
+A. Lawful good
+B. Neutral good
+C. Chaotic good
+D. Lawful neutral
+E. True neutral
+F. Chaotic neutral
+G. Lawful evil
+H. Neutral evil
+I. Chaotic evil
+
+Pick a primary weapon type:
+A. Melee
+B. Range
+C. Magic
+
+Melee Weapons:
+A. Battleaxe
+B. Dagger
+C. Club
+D. Staff
+E. Spear
+F. Sword
+G. Whip
+H. Scyth
+
+Range Weapons:
+A. Crossbow
+B. Blowgun
+C. Long Bow
+D. Short Bow
+
+Magic:
+A. Staff
+B. Wand
+C. Spellbook

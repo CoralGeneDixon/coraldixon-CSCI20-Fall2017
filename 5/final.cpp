@@ -23,6 +23,9 @@ int main()
     string hair_color = " ";
     string age = " ";
     string eye_color = " ";
+    int attck = 0;
+    int armor = 0;
+    int intellect = 0;
     
     inFS.open("input.txt");
     //Opening output HTML file
@@ -77,7 +80,8 @@ int main()
         
         case 'C':
         case 'c':
-            outFS << "Gender: " << q_array_[6] << endl; 
+            outFS << "Gender: " << q_array_[6] << endl;
+            attck = attck + 3;
             break;
             
         default:
@@ -112,37 +116,58 @@ int main()
     {
         case 'A':
         case 'a':
-            outFS << "Race: " << q_array_[13] << endl; 
+            outFS << "Race: " << q_array_[13] << endl;
+            attck = attck;
+            armor = armor;
+            intellect = intellect;
             break;
         
         case 'B':
         case 'b':
             outFS << "Race: " << q_array_[14] << endl; 
+            attck = attck + 1;
+            armor = armor;
+            intellect = intellect + 2;
             break;
         
         case 'C':
         case 'c':
             outFS << "Race: " << q_array_[15] << endl; 
+            attck = attck;
+            armor = armor + 2;
+            intellect = intellect + 1;
             break;
             
         case 'D':
         case 'd':
             outFS << "Race: " << q_array_[16] << endl; 
+            attck = attck + 3;
+            armor = armor + 3;
+            intellect = intellect;
             break;
         
         case 'E':
         case 'e':
             outFS << "Race: " << q_array_[17] << endl; 
+            attck = attck + 3;
+            armor = armor + 5;
+            intellect = intellect + 3;
             break;
         
         case 'F':
         case 'f':
-            outFS << "Race: " << q_array_[18] << endl; 
+            outFS << "Race: " << q_array_[18] << endl;
+            attck = attck;
+            armor = armor + 3;
+            intellect = intellect;
             break;
             
         case 'G':
         case 'g':
             outFS << "Race: " << q_array_[19] << endl; 
+            attck = attck + 1;
+            armor = armor + 2;
+            intellect = intellect + 1;
             break;
             
         default:
@@ -166,17 +191,26 @@ int main()
     {
         case 'A':
         case 'a':
-            outFS << "Class: " << q_array_[22] << endl; 
+            outFS << "Class: " << q_array_[22] << endl;
+            attck = attck + 3;
+            armor = armor + 3;
+            intellect = intellect;
             break;
         
         case 'B':
         case 'b':
             outFS << "Class: " << q_array_[23] << endl; 
+            attck = attck;
+            armor = armor;
+            intellect = intellect + 2;
             break;
         
         case 'C':
         case 'c':
-            outFS << "Class: " << q_array_[24] << endl; 
+            outFS << "Class: " << q_array_[24] << endl;
+            attck = attck + 3;
+            armor = armor + 2;
+            intellect = intellect + 3;
             break;
             
         case 'D':
@@ -419,7 +453,14 @@ int main()
             cout << "Not a valid input. Re-enter" << endl;
     }
     
+    outFS << "________________________________" << endl;
+    outFS << "Attack Power: " << attck << endl;
+    outFS << "Armor: " << armor << endl;
+    outFS << "Intellect: " << intellect << endl;
     
+    attck = attck;
+            armor = armor;
+            intellect = intellect;
     
     inFS.close();
     outFS.close();
